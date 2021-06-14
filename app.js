@@ -20,12 +20,12 @@ app.get('/', (req,res) =>{
 
 
 //Mongo URI
-const mongoURI = process.env.MONGODB_URI;
+// const mongoURI = `${process.env.MONGODB_URI}`;
 
 // const mongoURI = 'mongodb://localhost:27017/FileUploads_DB';
 
 //Mongo Connection
-const conn = mongoose.connect(mongoURI, {useNewUrlParser:true, useUnifiedTopology:true });
+const conn = mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser:true, useUnifiedTopology:true });
 
 // conn.once('open', ()=> console.log('MongoDB is connected!'));
 // conn.on('error', (e)=> console.log(e));

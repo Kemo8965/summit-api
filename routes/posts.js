@@ -35,8 +35,8 @@ router.post('/',async (req,res)=>{
 });
 
     router.post('/users',async (req,res)=>{
-        console.log(req.body.email);
-        
+      //  console.log(req.body.email);
+        try {  
        const user= new User({
            email:req.body.email,
            password:req.body.password
@@ -45,7 +45,7 @@ router.post('/',async (req,res)=>{
        console.log(user);
        
       const savedUsers = await user.save();
-        try {
+        
             res.json({
                 message: savedUsers,
                 status: 'Successfully sent data!'
