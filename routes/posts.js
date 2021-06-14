@@ -12,10 +12,7 @@ router.get('/', async (req,res)=>{
 router.get('/allUsers', async (req,res)=>{
     try {
         const users = await User.find();
-        res.json({
-            message: users,
-            status: 'Successfully retrieved data!'
-        });
+        res.json(users);
  
     } catch (error) {
         res.json({ message: error})
