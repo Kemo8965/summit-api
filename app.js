@@ -29,9 +29,6 @@ const conn = mongoose.connect(mongoURI, {useNewUrlParser:true, useUnifiedTopolog
 // conn.once('open', ()=> console.log('MongoDB is connected!'));
 // conn.on('error', (e)=> console.log(e));
 
-app.get('/',(req,res) => {
-    res.send('Server is Working!')
-});
 
 
 const port = process.env.PORT || 80 ;
