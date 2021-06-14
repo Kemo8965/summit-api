@@ -29,7 +29,36 @@ const conn = mongoose.connect(mongoURI, {useNewUrlParser:true, useUnifiedTopolog
 
 // conn.once('open', ()=> console.log('MongoDB is connected!'));
 // conn.on('error', (e)=> console.log(e));
+app.get('/users', async (req,res)=>{
+    try {
+        const users = await User.find();
+        res.json({
+            message: users,
+            status: 'Successfully retrieved data!'
+        });
+ 
+    } catch (error) {
+        res.json({ message: error})
+    }
+ });
 
+app.post('/users',async (req,res)=>{
+    console.log(req.body.email);
+    
+   const user= new User(req.body);
+
+   console.log(user);
+   
+  const savedUsers = await user.save();
+    try {
+        res.json({
+            message: savedUsers,
+            status: 'Successfully sent data!'
+        });
+    } catch (error) {
+         res.json({ message: err })
+    }
+});
 
 
 const port = process.env.PORT || 80 ;
