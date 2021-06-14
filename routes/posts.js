@@ -6,10 +6,10 @@ const User = require('../models/User');
 router.get('/', async (req,res)=>{
    try {
        const posts = await Post.find();
-       res.json(posts);
+       res.send('Posts is grafting');
 
    } catch (error) {
-       res.json({ message: error})
+       res.send({ message: error})
    }
 });
 
@@ -27,7 +27,7 @@ router.get('/allUsers', async (req,res)=>{
  });
 
 router.post('/newUsers',async (req,res)=>{
-    console.log(req.body.title);
+    
     
    const post= new Post(req.body);
 
