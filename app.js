@@ -14,9 +14,7 @@ app.use(express.json());
 
 
 // Default Route
-app.get('/', (req,res) =>{
-    res.send('Server is Working!')
-});
+
 
 
 //Mongo URI
@@ -29,10 +27,10 @@ const conn = mongoose.connect(mongoURI, {useNewUrlParser:true, useUnifiedTopolog
 
 // conn.once('open', ()=> console.log('MongoDB is connected!'));
 // conn.on('error', (e)=> console.log(e));
-app.get('/allUsers', async (req,res)=>{
+app.get('/', async (req,res)=>{
     try {
         const users = await User.find();
-        res.json({
+        res.send({
             message: users,
             status: 'Successfully retrieved data!'
         });
