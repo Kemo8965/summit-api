@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
+const User = require('../models/User');
 
 router.get('/', async (req,res)=>{
    try {
@@ -11,6 +12,19 @@ router.get('/', async (req,res)=>{
        res.json({ message: error})
    }
 });
+
+router.get('/users', async (req,res)=>{
+    try {
+        const users = await User.find();
+        res.json({
+            message: users,
+            status: 'Successfully retrieved data!'
+        });
+ 
+    } catch (error) {
+        res.json({ message: error})
+    }
+ });
 
 router.post('/',async (req,res)=>{
     console.log(req.body.title);
@@ -25,7 +39,25 @@ router.post('/',async (req,res)=>{
     } catch (error) {
          res.json({ message: err })
     }
-
 });
+
+    router.post('/users',async (req,res)=>{
+        console.log(req.body.email);
+        
+       const user= new User(req.body);
+    
+       console.log(user);
+       
+      const savedUsers = await user.save();
+        try {
+            res.json({
+                message: savedUsers,
+                status: 'Successfully sent data!'
+            });
+        } catch (error) {
+             res.json({ message: err })
+        }
+    });
+
 
 module.exports= router

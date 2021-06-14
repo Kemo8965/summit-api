@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 const Post = require('./models/Post');
+const User = require('./models/User');
 const postsRoute = require('./routes/posts');
 
 //middleware
