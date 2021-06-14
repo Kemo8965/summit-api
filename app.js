@@ -5,11 +5,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const Post = require('./models/Post');
 const User = require('./models/User');
-const postsRoute = require('./routes/posts');
+// const postsRoute = require('./routes/posts');
 
 //middleware
 app.use(express.json());
-app.use('/posts', postsRoute);
+// app.use('/posts', postsRoute);
 
 
 
@@ -29,7 +29,7 @@ const conn = mongoose.connect(mongoURI, {useNewUrlParser:true, useUnifiedTopolog
 
 // conn.once('open', ()=> console.log('MongoDB is connected!'));
 // conn.on('error', (e)=> console.log(e));
-app.get('/users', async (req,res)=>{
+app.get('/allUsers', async (req,res)=>{
     try {
         const users = await User.find();
         res.json({
@@ -42,7 +42,7 @@ app.get('/users', async (req,res)=>{
     }
  });
 
-app.post('/users',async (req,res)=>{
+app.post('/newUsers',async (req,res)=>{
     console.log(req.body.email);
     
    const user= new User(req.body);
