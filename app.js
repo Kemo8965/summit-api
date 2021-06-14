@@ -5,16 +5,18 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const Post = require('./models/Post');
 const User = require('./models/User');
-// const postsRoute = require('./routes/posts');
+const postsRoute = require('./routes/posts');
 
 //middleware
 app.use(express.json());
-// app.use('/posts', postsRoute);
+app.use('/posts', postsRoute);
 
 
 
 // Default Route
-
+app.get('/', (req,res) =>{
+    res.send('Server is Working!')
+});
 
 
 //Mongo URI
@@ -27,36 +29,7 @@ const conn = mongoose.connect(mongoURI, {useNewUrlParser:true, useUnifiedTopolog
 
 // conn.once('open', ()=> console.log('MongoDB is connected!'));
 // conn.on('error', (e)=> console.log(e));
-app.get('/', async (req,res)=>{
-    try {
-        const users = await User.find();
-        res.send({
-            message: users,
-            status: 'Successfully retrieved data!'
-        });
- 
-    } catch (error) {
-        res.json({ message: error})
-    }
- });
 
-app.post('/newUsers',async (req,res)=>{
-    console.log(req.body.email);
-    
-   const user= new User(req.body);
-
-   console.log(user);
-   
-  const savedUsers = await user.save();
-    try {
-        res.json({
-            message: savedUsers,
-            status: 'Successfully sent data!'
-        });
-    } catch (error) {
-         res.json({ message: err })
-    }
-});
 
 
 const port = process.env.PORT || 80 ;

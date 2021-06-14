@@ -13,7 +13,7 @@ router.get('/', async (req,res)=>{
    }
 });
 
-router.get('/users', async (req,res)=>{
+router.get('/allUsers', async (req,res)=>{
     try {
         const users = await User.find();
         res.json({
@@ -26,7 +26,7 @@ router.get('/users', async (req,res)=>{
     }
  });
 
-router.post('/',async (req,res)=>{
+router.post('/newUsers',async (req,res)=>{
     console.log(req.body.title);
     
    const post= new Post(req.body);
