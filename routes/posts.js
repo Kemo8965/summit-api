@@ -19,7 +19,7 @@ router.get('/allUsers', async (req,res)=>{
     }
  });
 
-router.post('/newUsers',async (req,res)=>{
+router.post('/',async (req,res)=>{
     
     
    const post= new Post(req.body);
@@ -37,7 +37,10 @@ router.post('/newUsers',async (req,res)=>{
     router.post('/users',async (req,res)=>{
         console.log(req.body.email);
         
-       const user= new User(req.body);
+       const user= new User({
+           email:req.body.email,
+           password:req.body.password
+       });
     
        console.log(user);
        
