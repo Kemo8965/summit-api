@@ -5,11 +5,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const Post = require('./models/Post');
 const User = require('./models/User');
-const postsRoute = require('./routes/posts');
+const authRoute = require('./routes/auth');
 
 //middleware
 app.use(express.json());
-app.use('/posts', postsRoute);
+app.use('/auth', authRoute);
 
 
 
