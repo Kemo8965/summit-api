@@ -12,9 +12,21 @@ router.get('/', async (req,res)=>{
 router.post('/individualClient', async (req,res) => {
     
      try {  
-        const newClient = new Client(req.body);
+        const newClient = new Client({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        title: req.body.title,
+        dateOfBirth: req.body.dateOfBirth,
+        gender: req.body.gender,
+        maritalStatus: req.body.maritalStatus,
+        idNumber: req.body.idNumber,
+        idType: req.body.idType,
+        phoneNumber: req.body.phoneNumber,
+        email: req.body.email,
+        residentialAddress: req.body.residentialAddress
+        });
      
-        console.log(registeredUser);
+        console.log(newClient);
         
        const savedClient = await newClient.save();
          console.log(savedClient);

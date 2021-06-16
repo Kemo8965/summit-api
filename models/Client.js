@@ -20,7 +20,7 @@ const ClientSchema = new mongoose.Schema({
     min: 2,
   },
   dateOfBirth: {
-    type: Date,
+    type: String,
     required: true,
    
   },
