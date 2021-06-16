@@ -28,13 +28,15 @@ router.get('/allUsers', async (req,res)=>{
 
   //LOGIN USERS
     router.post('/login',async (req,res)=>{
+
+        
       const {error}= loginValidation(req.body);
       if (error) return res.status(400).send(error.details[0].message);
 
       //CHECK IF EMAIL ALREADY EXISTS
        const user = await User.findOne({ email: req.body.email });
        if(!user) return res.status(400).send('Email is not found');
-
+      
 
       //CHECK IF USER PASSWORD MATCHES EMAIL
     const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -43,13 +45,19 @@ router.get('/allUsers', async (req,res)=>{
 
     //CREATE AND ASSIGN A TOKEN
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-    res.header('auth-token',token).send(token);
+    res.header('auth-token',token).send({ message: 'Logged In!', ID: user._id, token: token});
 
       res.send('Logged In!');
     
-      
+     
         
      
+    });
+
+    //LOGOUT USER
+    router.get('/logout', async (req,res) => {
+        res.header('auth-token', '', { maxAge: 1 });
+        res.redirect('/auth/login').send('Logged Out!');
     });
 
     //REGISTER USER
