@@ -8,6 +8,23 @@ router.get('/', async (req,res)=>{
 
 });
 
+//GET ALL USERS
+router.get('/allClients', async (req,res)=>{
+    try {
+        const allClients = await Client.find();
+        res.json({
+
+            status: 'Successfully retreived clients!',
+            data: allClients
+            
+        });
+ 
+    } catch (error) {
+        res.json({ message: error})
+    }
+ });
+
+
  //CREATE NEW CLIENT
 router.post('/individualClient', async (req,res) => {
     
@@ -32,7 +49,8 @@ router.post('/individualClient', async (req,res) => {
          console.log(savedClient);
              res.json({
                 
-                 status: 'Successfully added a new client!'
+                 Message: 'Successfully added a new client!',
+                 data: savedClient
              });
          } catch (err) {
               res.json({ message: err })
