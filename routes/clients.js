@@ -9,7 +9,7 @@ router.get('/', async (req,res)=>{
 });
 
  //CREATE NEW CLIENT
-router.post('/individualClient',verify, async (req,res) => {
+router.post('/individualClient', async (req,res) => {
     
      try {  
         const newClient = new Client({

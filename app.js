@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
+const cors = require('cors');
 const Post = require('./models/Post');
 const User = require('./models/User');
 const Client = require('./models/Client');
@@ -11,6 +12,7 @@ const clientRoute = require('./routes/clients');
 
 //middleware
 app.use(express.json());
+app.use(cors());
 app.use('/auth', authRoute);
 app.use('/clients', clientRoute);
 
