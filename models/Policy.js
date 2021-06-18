@@ -25,28 +25,28 @@ const PolicySchema = new mongoose.Schema({
             type: String,
             required: true
         }, 
-        interest:[{
-            sumInsured:{
-                type: String,
-                required: true
-            },
-            rate:{
-                type: String,
-                required:true
-            },
-            proRata:{
-                type: String,
-                required:true
-            },
-            premium:{
-                type: String,
-                required: true
-            },
-            totalPremium:{
-                type: String,
-                required:true
-            }
-        }],
+        
+        sumInsured:{
+            type: String,
+            required: true
+        },
+        rate:{
+            type: String,
+            required:true
+        },
+        proRata:{
+            type: String,
+            required:true
+        },
+        premium:{
+            type: String,
+            required: true
+        },
+        totalPremium:{
+            type: String,
+            required:true
+        }
+        
 });
 
 module.exports= mongoose.model('Policies', PolicySchema);

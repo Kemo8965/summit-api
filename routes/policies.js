@@ -37,7 +37,12 @@ router.post('/createPolicy', async (req,res) => {
         numOfQuarters: req.body.numOfQuarters,
         startDate: req.body.startDate,
         endDate: req.body.endDate, 
-        interest:req.body.interest
+        sumInsured:req.body.sumInsured,
+        rate:req.body.rate,
+        proRata:req.body.proRata,
+        premium: req.body.premium,
+        totalPremium:req.body.totalPremium
+                
         });
      
         console.log(newPolicy);
