@@ -7,14 +7,17 @@ const cors = require('cors');
 const Post = require('./models/Post');
 const User = require('./models/User');
 const Client = require('./models/Client');
+const Policy = require('./models/Policy');
 const authRoute = require('./routes/auth');
 const clientRoute = require('./routes/clients');
+const policiesRoute = require('./routes/policies');
 
 //middleware
 app.use(express.json());
 app.use(cors());
 app.use('/auth', authRoute);
 app.use('/clients', clientRoute);
+app.use('/policies', policiesRoute);
 
 
 
