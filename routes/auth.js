@@ -39,8 +39,8 @@ router.get('/allUsers', async (req,res)=>{
        if(!user) return res.status(400).send('Email is not found');
       
        //CHECK FOR NAME      
-        const user = await User.findOne({ email: req.body.name });
-       if(!user) return res.status(400).send('Name is not found');
+        const username = await User.findOne({ name: req.body.name });
+       if(!username) return res.status(400).send('Name is not found');
 
       //CHECK IF USER PASSWORD MATCHES EMAIL
     const validPass = await bcrypt.compare(req.body.password, user.password);
