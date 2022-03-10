@@ -1,5 +1,5 @@
 {
-  "name": "summit-api",
+  "name": "litmas-api",
   "version": "1.0.0",
   "description": "summit api",
   "main": "app.js",
@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/Kemo8965/litmas-api/issues"
   },
-  "homepage": "https://github.com/Kemo8965/litmas-api#readme"
+  "homepage": "https://github.com/Kemo8965/litmas-api#readme",
+  "keywords": [
+    "litmas-systems"
+  ]
 }
