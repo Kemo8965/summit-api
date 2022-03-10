@@ -1,5 +1,5 @@
 {
-  "name": "litmas-api",
+  "name": "summit-api",
   "version": "1.0.0",
   "description": "summit api",
   "main": "app.js",
@@ -26,7 +26,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit "
   },
   "repository": {
     "type": "git",
@@ -37,8 +37,5 @@
   "bugs": {
     "url": "https://github.com/Kemo8965/litmas-api/issues"
   },
-  "homepage": "https://github.com/Kemo8965/litmas-api#readme",
-  "keywords": [
-    "litmas-systems"
-  ]
+  "homepage": "https://github.com/Kemo8965/litmas-api#readme"
 }
