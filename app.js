@@ -5,15 +5,12 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser")
 require('dotenv').config();
 const cors = require('cors');
-const authRoute = require('./routes/auth');
 const tasksRoute = require('./routes/tasks');
-// const complianceRoute = require('./routes/compliance');
-// const financeRoute = require('./routes/finance');
+
 
 //middleware
 app.use(express.json());
 app.use(cors());
-app.use('/auth', authRoute);
 app.use('/tasks', tasksRoute);
 
 
