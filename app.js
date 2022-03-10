@@ -1,24 +1,30 @@
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
-const bodyParser = require("body-parser")
 require('dotenv').config();
-const cors = require('cors');
-const tasksRoute = require('./routes/tasks');
+const authRoute = require('./routes/auth');
+const procurementRoute = require('./routes/procurement');
+const complianceRoute = require('./routes/compliance');
+const financeRoute = require('./routes/finance');
 
 
-//middleware
+
+//----------middleware-------------------------
+
+app.use(cors({origin: 'https://litmassystems.herokuapp.com, http://localhost:3000'}));
 app.use(express.json());
-app.use(cors());
-app.use('/tasks', tasksRoute);
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/auth', authRoute);
+app.use('/pfis', procurementRoute);
+app.use('/comp/permits', complianceRoute);
+app.use('/finance', financeRoute);
 
 
 // Default Route
 app.get('/', (req,res) =>{
+   
     res.send('Server is Working!')
 });
 

@@ -1,7 +1,7 @@
 {
-  "name": "summit-api",
-  "version": "1.0.0",
-  "description": "summit api",
+  "name": "livestock-api",
+  "version": "0.0.0",
+  "private": true,
   "main": "app.js",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
@@ -11,7 +11,7 @@
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
-    "express": "^4.17.3",
+    "express": "^4.17.2",
     "heroku": "^7.59.2",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
@@ -26,16 +26,16 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kemo8965/litmas-api.git"
+    "url": "git+https://github.com/livestock-services/livestock-api.git"
   },
   "author": "Kondwani Mwale",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kemo8965/litmas-api/issues"
+    "url": "https://github.com/livestock-services/livestock-api/issues"
   },
-  "homepage": "https://github.com/Kemo8965/litmas-api#readme"
+  "homepage": "https://github.com/livestock-services/livestock-api#readme"
 }
