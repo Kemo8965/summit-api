@@ -30,12 +30,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kemo8965/summit-api.git"
+    "url": "git+https://github.com/Kemo8965/litmas-api.git"
   },
   "author": "Kondwani Mwale",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kemo8965/summit-api/issues"
+    "url": "https://github.com/Kemo8965/litmas-api/issues"
   },
-  "homepage": "https://github.com/Kemo8965/summit-api#readme"
+  "homepage": "https://github.com/Kemo8965/litmas-api#readme"
 }
